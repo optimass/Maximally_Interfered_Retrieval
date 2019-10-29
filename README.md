@@ -41,11 +41,11 @@ Code for reproducing all results in our paper, which can be found [here](https:/
 
 ER baseline example:  </br>
 
-`python er_main.py --method rand_replay --samples_per_task 1000 --mem_size 50 --dataset split_cifar10`
+`python er_main.py --method rand_replay --dataset split_cifar10 --mem_size 50`
 
 ER-MIR example:  </br>
 
-`python er_main.py --method mir_replay --mem_size 50 --samples_per_task 1000 --dataset split_cifar10`
+`python er_main.py --method mir_replay --dataset split_cifar10 --mem_size 50`
 
 Reproduce:  </br>
 
