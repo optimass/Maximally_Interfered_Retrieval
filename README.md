@@ -1,7 +1,10 @@
 ## Online Continual Learning with Maximally Interfered Retrieval (NeurIPS 2019)
 
 Controlled sampling of memories for replay: retrieving the samples which are most interfered, i.e. whose prediction will be most negatively impacted by the foreseen parameters update. </br>
-Code for reproducing all results in our paper, which can be found [here](https://arxiv.org/abs/1908.04742) </br>
+
+* [paper](https://arxiv.org/abs/1908.04742)
+* [summary](https://www.shortscience.org/paper?bibtexKey=journals/corr/1908.04742)
+* [video](https://www.youtube.com/watch?v=wfb9UV_n8jg&t=153s)
 
 ## (key) Requirements 
 - Python 3.6
@@ -91,17 +94,26 @@ Reproduce:  </br>
 
 `sh Scripts/hybrid_reproduce.sh`
 
-
  
 ## Logging
 
 
 ## Acknowledgements 
 We would like to thank authors of the following repositories (from which we borrowed code) for making the code public. </br>
+* https://github.com/riannevdberg/sylvester-flows
+
 
 
 ## Cite
-
+```
+@article{Aljundi2019OnlineCL,
+  title={Online Continual Learning with Maximally Interfered Retrieval},
+  author={Rahaf Aljundi and Lucas Caccia and Eugene Belilovsky and Massimo Caccia and Min Lin and Laurent Charlin and Tinne Tuytelaars},
+  journal={ArXiv},
+  year={2019},
+  volume={abs/1908.04742}
+}
+```
 
 
 
