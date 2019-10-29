@@ -4,7 +4,7 @@ Controlled sampling of memories for replay: retrieving the samples which are mos
 
 * [paper](https://arxiv.org/abs/1908.04742)
 * [summary](https://www.shortscience.org/paper?bibtexKey=journals/corr/1908.04742)
-* [video](https://www.youtube.com/watch?v=wfb9UV_n8jg&t=153s)
+* [video](https://www.youtube.com/watch?v=wfb9UV_n8jg)
 
 ## (key) Requirements 
 - Python 3.6
