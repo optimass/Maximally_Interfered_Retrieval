@@ -1,4 +1,4 @@
-# Online Continual Learning with Maximally Interfered Retrieval (NeurIPS 2019)
+## Online Continual Learning with Maximally Interfered Retrieval (NeurIPS 2019)
 
 Controlled sampling of memories for replay: retrieving the samples which are most interfered, i.e. whose prediction will be most negatively impacted by the foreseen parameters update. </br>
 Code for reproducing all results in our paper, which can be found [here](https://arxiv.org/abs/1908.04742) </br>
@@ -89,7 +89,7 @@ AE-MIR example:  </br>
 
 Reproduce:  </br>
 
-`sh Scripts/hhybrid_reproduce.sh`
+`sh Scripts/hybrid_reproduce.sh`
 
 
  
