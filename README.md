@@ -97,6 +97,9 @@ Reproduce:  </br>
  
 ## Logging
 
+Logging is done with [Weights & Biases](https://www.wandb.com/) and can be turned on like this: </br>
+`python <method>_main.py --log online`
+
 
 ## Acknowledgements 
 We would like to thank authors of the following repositories (from which we borrowed code) for making the code public. </br>
