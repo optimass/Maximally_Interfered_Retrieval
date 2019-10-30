@@ -118,6 +118,11 @@ We would like to thank authors of the following repositories (from which we borr
 }
 ```
 
+## Questions?
+
+For general questions + GEN related questions, contact [Massimo](massimo.p.caccia@gmail.com)  </br>
+For ER related questions, contact [Eugene](Belilovsky.Eugene@gmail.com) </br>
+For AE related questions, contact [Lucas](lucas.page-caccia@mail.mcgill.ca) </br>
 
 
 
