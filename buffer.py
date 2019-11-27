@@ -13,7 +13,7 @@ class Buffer(nn.Module):
 
         self.place_left = True
 
-        if input_size is None: 
+        if input_size is None:
             input_size = args.input_size
 
         # TODO(change this:)
@@ -22,17 +22,17 @@ class Buffer(nn.Module):
                 img_size = 784
                 economy = img_size // input_size[0]
             elif 'cifar' in args.dataset:
-                img_size = 32 * 32 * 3 
+                img_size = 32 * 32 * 3
                 economy = img_size // (input_size[0] ** 2)
             elif 'imagenet' in args.dataset:
-                img_size = 84 * 84 * 3 
+                img_size = 84 * 84 * 3
                 economy = img_size // (input_size[0] ** 2)
         else:
             economy = 1
 
         buffer_size = economy  * args.mem_size
         print('buffer has %d slots' % buffer_size)
-        
+
         bx = torch.FloatTensor(buffer_size, *input_size).fill_(0)
         by = torch.LongTensor(buffer_size).fill_(0)
         bt = torch.LongTensor(buffer_size).fill_(0)
@@ -62,7 +62,7 @@ class Buffer(nn.Module):
     def x(self):
         return self.bx[:self.current_index]
 
-    @property 
+    @property
     def y(self):
         return self.to_one_hot(self.by[:self.current_index])
 
@@ -105,23 +105,23 @@ class Buffer(nn.Module):
             self.bt[self.current_index: self.current_index + offset].fill_(t)
 
 
-            if save_logits: 
+            if save_logits:
                 self.logits[self.current_index: self.current_index + offset].data.copy_(logits[:offset])
-        
+
             self.current_index += offset
             self.n_seen_so_far += offset
-            
+
             # everything was added
-            if offset == x.size(0): 
-                return 
+            if offset == x.size(0):
+                return
 
         self.place_left = False
 
         # remove what is already in the buffer
         x, y = x[place_left:], y[place_left:]
-        
+
         indices = torch.FloatTensor(x.size(0)).to(x.device).uniform_(0, self.n_seen_so_far).long()
-        valid_indices = (indices < self.bx.size(0)).long() 
+        valid_indices = (indices < self.bx.size(0)).long()
 
         idx_new_data = valid_indices.nonzero().squeeze(-1)
         idx_buffer   = indices[idx_new_data]
@@ -130,7 +130,7 @@ class Buffer(nn.Module):
         assert idx_buffer.max() < self.bx.size(0), pdb.set_trace()
         assert idx_buffer.max() < self.by.size(0), pdb.set_trace()
         assert idx_buffer.max() < self.bt.size(0), pdb.set_trace()
-       
+
         assert idx_new_data.max() < x.size(0), pdb.set_trace()
         assert idx_new_data.max() < y.size(0), pdb.set_trace()
 
@@ -139,7 +139,7 @@ class Buffer(nn.Module):
         self.by[idx_buffer] = y[idx_new_data]
         self.bt[idx_buffer] = t
 
-        if save_logits: 
+        if save_logits:
             self.logits[idx_buffer] = logits[idx_new_data]
 
         self.n_seen_so_far += x.size(0)
@@ -150,7 +150,7 @@ class Buffer(nn.Module):
             valid_indices = self.valid.nonzero()
             valid_x, valid_y = self.bx[valid_indices], self.by[valid_indices]
             one_hot_y = self.to_one_hot(valid_y.flatten())
-      
+
             hid_x = generator.idx_2_hid(valid_x)
             x_hat = generator.decode(hid_x)
 
@@ -162,7 +162,7 @@ class Buffer(nn.Module):
             per_class_correct = correct.sum(dim=0)
             per_class_deno    = one_hot_y.sum(dim=0)
             per_class_acc     = per_class_correct.float() / per_class_deno.float()
-            self.class_weight = 1. - per_class_acc 
+            self.class_weight = 1. - per_class_acc
             self.valid_acc    = per_class_acc
             self.valid_deno   = per_class_deno
 

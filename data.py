@@ -209,8 +209,6 @@ def get_split_cifar10(args):
     # fetch MNIST
     train = datasets.CIFAR10('Data/', train=True,  download=True)
     test  = datasets.CIFAR10('Data/', train=False, download=True)
-    # train = datasets.CIFAR10('../cl-pytorch/data/', train=True,  download=True)
-    # test  = datasets.CIFAR10('../cl-pytorch/data/', train=False, download=True)
 
     try:
         train_x, train_y = train.data, train.targets
@@ -263,8 +261,6 @@ def get_split_cifar10(args):
     return train_ds, val_ds, test_ds
 
 def get_miniimagenet(args):
-    #ROOT_PATH = '../cl-pytorch/data/imagenet_images'
-    #ROOT_PATH_CSV = '../prototypical-network-pytorch/materials'
     ROOT_PATH = '/home/eugene//data/filelists/miniImagenet/materials/images'
     ROOT_PATH_CSV = '/home/eugene//data/filelists/miniImagenet/materials'
 

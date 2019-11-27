@@ -44,7 +44,7 @@ def get_grad_vector(args, pp, grad_dims):
         cnt += 1
     return grads
 
-def get_future_step_parameters(this_net,grad_vector,grad_dims,lr=1):
+def get_future_step_parameters(this_net, grad_vector, grad_dims, lr=1):
     """
     computes \theta-\delta\theta
     :param this_net:
@@ -83,7 +83,6 @@ def distillation_KL_loss(y, teacher_scores, T, scale=1, reduction='batchmean'):
     """
     return F.kl_div(F.log_softmax(y / T, dim=1), F.softmax(teacher_scores / T, dim=1),
             reduction=reduction) * scale
-
 
 def naive_cross_entropy_loss(input, target, size_average=True):
     """
@@ -133,8 +132,6 @@ def logging_per_task(wandb, log, run, mode, metric, task=0, task_t=0, value=0):
         log[run][mode][metric] = value
     else:
         log[run][mode][metric][task_t, task] = value
-
-    #print('run {}\t {}\t {}\t task {}\t {:.4f}'.format(run, mode, metric, task, value))
 
     if wandb is not None:
         if 'final' in metric:

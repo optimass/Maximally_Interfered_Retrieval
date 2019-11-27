@@ -108,7 +108,6 @@ class CVAE(nn.Module):
         # return mse
         return self.mse + self.kl_coef * self.kl_loss
 
-
 class ResBlock(nn.Module):
     def __init__(self, in_channels, channels, bn=False):
         super(ResBlock, self).__init__()
@@ -134,7 +133,6 @@ def conv3x3(in_planes, out_planes, stride=1):
     return nn.Conv2d(in_planes, out_planes, kernel_size=3, stride=stride,
                      padding=1, bias=False)
 
-
 class BasicBlock(nn.Module):
     expansion = 1
 
@@ -159,7 +157,6 @@ class BasicBlock(nn.Module):
         out += self.shortcut(x)
         out = F.relu(out)
         return out
-
 
 class CategoricalConditionalBatchNorm(torch.nn.Module):
     # as in the chainer SN-GAN implementation, we keep per-cat weight and bias
@@ -222,7 +219,6 @@ class CategoricalConditionalBatchNorm(torch.nn.Module):
             #bias = self.bias.index_select(0, cats).view(shape)
             out = out * weight + bias
         return out
-
 
 class ResNet(nn.Module):
     def __init__(self, block, num_blocks, num_classes, nf, input_size):
