@@ -212,4 +212,3 @@ def get_cifar_buffer(args, hH=8, gen=None):
     args.gen = True
 
     return Buffer(args, gen=gen)
-

@@ -261,4 +261,3 @@ for mode in ['valid','test']:
         wandb.log({mode+'final_acc_se':final_acc_se})
         wandb.log({mode+'final_forget_avg':final_forget_avg})
         wandb.log({mode+'final_forget_se':final_forget_se})
-

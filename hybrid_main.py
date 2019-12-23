@@ -342,7 +342,6 @@ for mode in ['valid','test']:
         wandb.log({mode+'final_forget_avg':final_forget_avg})
         wandb.log({mode+'final_forget_se':final_forget_se})
 
-
 # save log file in result dir
 delattr(LOG, 'print_')
 with open(os.path.join(args.result_dir, 'log'), 'wb') as handle:
