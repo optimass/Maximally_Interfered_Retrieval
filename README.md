@@ -109,12 +109,15 @@ We would like to thank authors of the following repositories (from which we borr
 
 ## Cite
 ```
-@article{Aljundi2019OnlineCL,
-  title={Online Continual Learning with Maximally Interfered Retrieval},
-  author={Rahaf Aljundi and Lucas Caccia and Eugene Belilovsky and Massimo Caccia and Min Lin and Laurent Charlin and Tinne Tuytelaars},
-  journal={ArXiv},
-  year={2019},
-  volume={abs/1908.04742}
+@incollection{NIPS2019_9357,
+title = {Online Continual Learning with Maximal Interfered Retrieval},
+author = {Aljundi, Rahaf and Belilovsky, Eugene and Tuytelaars, Tinne and Charlin, Laurent and Caccia, Massimo and Lin, Min and Page-Caccia, Lucas},
+booktitle = {Advances in Neural Information Processing Systems 32},
+editor = {H. Wallach and H. Larochelle and A. Beygelzimer and F. d\textquotesingle Alch\'{e}-Buc and E. Fox and R. Garnett},
+pages = {11849--11860},
+year = {2019},
+publisher = {Curran Associates, Inc.},
+url = {http://papers.nips.cc/paper/9357-online-continual-learning-with-maximal-interfered-retrieval.pdf}
 }
 ```
 
