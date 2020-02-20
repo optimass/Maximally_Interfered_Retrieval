@@ -50,7 +50,7 @@ class CLDataLoader(object):
 
         self.datasets = datasets_per_task
         self.loaders = [
-                torch.utils.data.DataLoader(x, batch_size=bs, shuffle=True, drop_last=not train, num_workers=0)
+                torch.utils.data.DataLoader(x, batch_size=bs, shuffle=True, drop_last=train, num_workers=0)
                 for x in self.datasets ]
 
     def __getitem__(self, idx):
