@@ -126,6 +126,8 @@ class Buffer(nn.Module):
         idx_new_data = valid_indices.nonzero().squeeze(-1)
         idx_buffer   = indices[idx_new_data]
 
+        self.n_seen_so_far += x.size(0)
+
         if idx_buffer.numel() == 0:
             return
 
@@ -144,7 +146,6 @@ class Buffer(nn.Module):
         if save_logits:
             self.logits[idx_buffer] = logits[idx_new_data]
 
-        self.n_seen_so_far += x.size(0)
 
     def measure_valid(self, generator, classifier):
         with torch.no_grad():
