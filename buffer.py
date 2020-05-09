@@ -126,6 +126,8 @@ class Buffer(nn.Module):
         idx_new_data = valid_indices.nonzero().squeeze(-1)
         idx_buffer   = indices[idx_new_data]
 
+        if idx_buffer.numel() == 0:
+            return
 
         assert idx_buffer.max() < self.bx.size(0), pdb.set_trace()
         assert idx_buffer.max() < self.by.size(0), pdb.set_trace()
