@@ -172,6 +172,10 @@ for run in range(args.n_runs):
             #---------------
             # Iteration Loop
             for it in range(args.disc_iters):
+                if args.method == 'no_rehearsal':
+                    rehearse = False
+                else:
+                    rehearse = task>0
                 model = retrieve_replay_update(args,
                                     model, opt, data, target, buffer, task, tr_loader,rehearse=task>0)
 
