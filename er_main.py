@@ -177,7 +177,7 @@ for run in range(args.n_runs):
                 else:
                     rehearse = task>0
                 model = retrieve_replay_update(args,
-                                    model, opt, data, target, buffer, task, tr_loader,rehearse=task>0)
+                                    model, opt, data, target, buffer, task, tr_loader,rehearse=rehearse)
 
             buffer.add_reservoir(data, target, None, task)
 
