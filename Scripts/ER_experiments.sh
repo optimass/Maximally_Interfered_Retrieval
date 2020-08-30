@@ -15,7 +15,7 @@ runs=20
 for mem in "${mems[@]}"
     do
         python er_main.py --method mir_replay --lr 0.1 --samples_per_task 1000 --dataset split_mnist  --subsample 50  --n_runs $runs --disc_iters $n_iters --mem_size $mem --compare_to_old_logits --suffix 'ER_MIR'
-        python er_main.py --method rand_replay --lr 0.05 --samples_per_task 1000 --dataset split_mnist --n_runs $runs --disc_iters $n_iters --mem_size $mem --suffix 'ER'
+        python er_main.py --method rand_replay --lr 0.1 --samples_per_task 1000 --dataset split_mnist --n_runs $runs --disc_iters $n_iters --mem_size $mem --suffix 'ER'
     done
 
 
