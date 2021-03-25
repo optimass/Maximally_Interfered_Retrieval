@@ -16,7 +16,7 @@ Pillow==6.2.0
 promise==2.2.1
 psutil==5.6.3
 python-dateutil==2.8.0
-PyYAML==5.1.2
+PyYAML==5.4
 requests==2.22.0
 Rx==1.6.1
 sentry-sdk==0.12.3
